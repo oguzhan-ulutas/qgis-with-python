@@ -17,6 +17,16 @@ class Employee:
     def applyRaise(self):
         self.pay = int(self.pay * self.raiseAmount)
 
+    @classmethod
+    def setRaiseAmount(cls, amount):
+        cls.raiseAmount = amount
+
+    @staticmethod
+    def isWorkday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
 print(Employee.numOfEmp)
 
 emp1 = Employee("Corey", "Schefer", 60000)
